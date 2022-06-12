@@ -97,6 +97,52 @@ public class scripDelAuto : MonoBehaviour
             perdiste = true;
             textoPerdiste.text = "Perdiste, te falta prote man";
         }
+        if (col.gameObject.name == "HUEVO1")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADOR01S1")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADOR02S1")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS3")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS302")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS303")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS304")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS305")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "CUBOROTADORS306")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+
         // CAMBIOS DE VELOCIDADES
         if (col.gameObject.name == "NAFTA")
         {
