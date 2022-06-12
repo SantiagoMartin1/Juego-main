@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scriptCuboDispara : MonoBehaviour
+public class positiveRotation : MonoBehaviour
 {
-    public GameObject bala;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,7 @@ public class scriptCuboDispara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(5f, 0, 0);
 
     }
 }

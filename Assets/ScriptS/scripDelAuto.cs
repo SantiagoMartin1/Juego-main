@@ -9,7 +9,7 @@ public class scripDelAuto : MonoBehaviour
     bool perdiste;
     bool hasJump;
     float speed = 0.125f;  
-    float jumpForce = 8f;
+    float jumpForce = 5f;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -56,10 +56,11 @@ public class scripDelAuto : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        //GANASTE O PERDISTE
         if (col.gameObject.name == "BONDI")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste pana";
+            textoPerdiste.text = "Perdiste, te falta prote man";
         }
         if (col.gameObject.name == "bochaGanadora")
         {
@@ -69,24 +70,33 @@ public class scripDelAuto : MonoBehaviour
         if(col.gameObject.name == "PALITO01")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste pana";
+            textoPerdiste.text = "Perdiste, te falta prote man";
         }
         if (col.gameObject.name == "PALITO02")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste pana";
+            textoPerdiste.text = "Perdiste, te falta prote man";
         }
         if (col.gameObject.name == "PALITO03")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste pana";
+            textoPerdiste.text = "Perdiste, te falta prote man";
         }
         if (col.gameObject.name == "PARED")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste pana";
+            textoPerdiste.text = "Perdiste, te falta prote man";
         }
-
+        if (col.gameObject.name == "HUEVO")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
+        if (col.gameObject.name == "HUEVO1")
+        {
+            perdiste = true;
+            textoPerdiste.text = "Perdiste, te falta prote man";
+        }
         // CAMBIOS DE VELOCIDADES
         if (col.gameObject.name == "NAFTA")
         {
@@ -95,6 +105,10 @@ public class scripDelAuto : MonoBehaviour
         if (col.gameObject.name == "AGUITA")
         {
             speed = 0.1f;
+        }
+        if (col.gameObject.name == "VELOCIDAD")
+        {
+            speed = 0.325f;
         }
 
         //PODER SALTAR O NO
