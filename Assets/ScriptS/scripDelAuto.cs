@@ -11,6 +11,7 @@ public class scripDelAuto : MonoBehaviour
     float speed = 0.125f;  
     float jumpForce = 5f;
     Rigidbody rb;
+    public GameObject cubito;
 
     // Start is called before the first frame update
     void Start()
@@ -142,7 +143,15 @@ public class scripDelAuto : MonoBehaviour
             perdiste = true;
             textoPerdiste.text = "Perdiste, te falta prote man";
         }
-
+        if (col.gameObject.name == "META")
+        {
+            for (int i = 0; i > 100; i++)
+            {
+                Instantiate(cubito);
+            }
+            perdiste = true;
+            textoPerdiste.text = "Ganaste, estas demasiado toro para este juego :)";
+        }
         // CAMBIOS DE VELOCIDADES
         if (col.gameObject.name == "NAFTA")
         {
