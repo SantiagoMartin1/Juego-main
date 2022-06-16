@@ -151,6 +151,11 @@ public class scripDelAuto : MonoBehaviour
             perdiste = true;
             SceneManager.LoadScene("escenaPerdiste");
         }
+        if (col.gameObject.name == "abismo")
+        {
+            perdiste = true;
+            SceneManager.LoadScene("escenaPerdiste");
+        }
         if (col.gameObject.name == "MET4")
         {
             perdiste = true;
