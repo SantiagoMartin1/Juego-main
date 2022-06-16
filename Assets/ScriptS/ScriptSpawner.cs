@@ -16,9 +16,13 @@ public class ScriptSpawner : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            GameObject capsule = Instantiate(HUEVO, transform.position, transform.rotation) as GameObject;
-            capsule.name = "HUEVO";
-            Destroy(capsule, 3f);
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject capsule = Instantiate(HUEVO, transform.position, transform.rotation) as GameObject;
+                capsule.name = "HUEVO";
+                Destroy(capsule, 3f);
+            }
+
         }
     }
 }

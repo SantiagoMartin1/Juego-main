@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scripDelAuto : MonoBehaviour
 {
-    public Text textoPerdiste;
     bool perdiste;
     bool hasJump;
     float speed = 0.125f;  
     float jumpForce = 5f;
     Rigidbody rb;
-    public GameObject cubito;
+    public Text txtTimeFloored;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class scripDelAuto : MonoBehaviour
     {
         if (perdiste == false)
         {
+
             if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(0, 0, speed);
@@ -51,107 +53,110 @@ public class scripDelAuto : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 hasJump = false;
             }
+            float elapsedTime = Time.time;
+            txtTimeFloored.text = Mathf.Floor(elapsedTime).ToString();
         }
                   
     }
-
     void OnCollisionEnter(Collision col)
     {
-        //GANASTE O PERDISTE
+        if (perdiste == true)
+        {
+            SceneManager.LoadScene("escenaPerdiste");
+        }
+        //PERDISTE
         if (col.gameObject.name == "BONDI")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
+
         }
-        if (col.gameObject.name == "bochaGanadora")
+        if (col.gameObject.name == "PALITO01")
         {
             perdiste = true;
-            textoPerdiste.text = "Ganaste, felicitaciones por ser tan inteligente";
-        }
-        if(col.gameObject.name == "PALITO01")
-        {
-            perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "PALITO02")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "PALITO03")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "PARED")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "HUEVO")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "HUEVO1")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "HUEVO1")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADOR01S1")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADOR02S1")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADORS3")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADORS302")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADORS303")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADORS304")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
         if (col.gameObject.name == "CUBOROTADORS305")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
-        if (col.gameObject.name == "CUBOROTADORS306")
+        if (col.gameObject.name == "CUBOROTADORS3007")
         {
             perdiste = true;
-            textoPerdiste.text = "Perdiste, te falta prote man";
+            SceneManager.LoadScene("escenaPerdiste");
         }
-        if (col.gameObject.name == "META")
+        if (col.gameObject.name == "MURO")
         {
-            for (int i = 0; i > 100; i++)
-            {
-                Instantiate(cubito);
-            }
             perdiste = true;
-            textoPerdiste.text = "Ganaste, estas demasiado toro para este juego :)";
+            SceneManager.LoadScene("escenaPerdiste");
         }
+        if (col.gameObject.name == "MET4")
+        {
+            perdiste = true;
+            SceneManager.LoadScene("escenaGanaste");
+        }
+
         // CAMBIOS DE VELOCIDADES
         if (col.gameObject.name == "NAFTA")
         {
@@ -175,6 +180,10 @@ public class scripDelAuto : MonoBehaviour
         {
             speed = 0.275f;
             hasJump = false;
+        }
+        if (col.gameObject.name == "ROADsinfrenos")
+        {
+            perdiste = true;
         }
     }
 }
